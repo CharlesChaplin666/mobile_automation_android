@@ -3,10 +3,10 @@ package tests;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -34,16 +34,10 @@ public class BaseClass {
             System.out.println("Message is : " + ex.getMessage());
             ex.printStackTrace();
         }
+    }
         @AfterAll
         public static void teardown() {
             driver.quit();
         }
 
     }
-}
-public class RegFormTest extends BaseClass {
-    @Test
-    public static void regFormTest(){
-        //метод теста
-    }
-}
