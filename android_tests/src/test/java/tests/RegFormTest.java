@@ -21,8 +21,8 @@ public class RegFormTest extends BaseClass {
         Assertions.assertTrue(driver.findElementById("android:id/pickers").isDisplayed());
         driver.findElementById("android:id/button1").click();
         driver.findElementById("biz.growapp.winline:id/tvHavePromoCode").click();
-        driver.findElementsById("biz.growapp.winline:id/ivSport").get(3).setValue("123456");
-        Assertions.assertEquals(driver.findElementsById("biz.growapp.winline:id/ivSport").get(3).getText(), "123456");
+        driver.findElementById("biz.growapp.winline:id/etPromoCode").setValue("123456");
+        Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPromoCode").getText(), "123456");
 
 
         /*if (driver.findElementById("biz.growapp.winline:id/btnGetSmsCode").isEnabled()) {
