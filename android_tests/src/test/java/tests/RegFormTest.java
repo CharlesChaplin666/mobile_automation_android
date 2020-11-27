@@ -36,5 +36,19 @@ public class RegFormTest extends BaseClass {
         //Активация чек-бокса и проверка активации кнопки "Продолжить"
         driver.findElementById("biz.growapp.winline:id/cbAgreement").click();
         Assertions.assertTrue(driver.findElementById("biz.growapp.winline:id/btnGetSmsCode").isEnabled());
+
+        //Очистка полей Номера, даты
+        driver.findElementById("biz.growapp.winline:id/etPhone").click();
+        driver.findElementById("biz.growapp.winline:id/ivClearPhone").click();
+        driver.findElementById("biz.growapp.winline:id/ivClearBirthday").click();
+
+        //Проверка отображения/скрытия пароля
+        driver.findElementById("biz.growapp.winline:id/btnVisibilityPassword").click();
+        driver.findElementById("biz.growapp.winline:id/btnVisibilityPassword").click();
+
+        //Очистка поля пароля
+        driver.findElementById("biz.growapp.winline:id/etPassword").click();
+        driver.findElementById("biz.growapp.winline:id/etPassword").clear();
+
     }
 }
