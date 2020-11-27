@@ -9,8 +9,8 @@ public class MainPage extends BaseClass {
         this.driver = driver;
     }
     public static void closePopupIfDisplayed() {
-        if (driver.findElementById(bannerId).isDisplayed()) { //bannerId
-            driver.findElementById(LogoId).click(); //logoId
+        if (driver.findElementById("biz.growapp.winline:id/tvTranslationText").isDisplayed()) { //bannerId
+            driver.findElementById("biz.growapp.winline:id/tvTranslationText").click(); //logoId
         }
     }
 }
