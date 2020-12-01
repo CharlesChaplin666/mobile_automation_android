@@ -27,9 +27,12 @@ public class AuthFormTest extends BaseClass{
         driver.findElementById("biz.growapp.winline:id/btnLogIn").click();
         //Появляется поп-ап Фрибет
         closePopupIfDisplayed();
-        //Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/toolbar").getText(), "Идентификация"); неправильно указан элемент
-        //driver.findElementByXPath("//android.widget.ImageButton[@contains(content-desc=\"Перейти вверх\")]").click(); нет resource id, поэтому указал xpath, но он не проходит
-
+        Assertions.assertEquals(driver.findElementsByClassName("android.widget.TextView").get(0).getText(), "Идентификация");
+        driver.findElementsById("biz.growapp.winline:id/fixed_bottom_navigation_icon").get(4).click();
+        driver.findElementsById("biz.growapp.winline:id/tvText").get(10).click();
+        Assertions.assertEquals(driver.findElementById("android:id/message").getText(), "Ты точно хочешь выйти?");
+        driver.findElementById("android:id/button1").click();
+        Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/btnAuth").getText(),"Вход");
 
         //Переход в раздел Вход через E-MAIL, валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
 
