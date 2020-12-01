@@ -15,7 +15,7 @@ public class AuthFormTest extends BaseClass{
         driver.findElementById("biz.growapp.winline:id/btnAuth").click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(),"Логин");
 
-        //Валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
+        //1 Валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
         driver.findElementById("biz.growapp.winline:id/etLogin").click();
         driver.findElementById("biz.growapp.winline:id/etLogin").setValue("9745314");
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(), "9745314");
@@ -33,7 +33,7 @@ public class AuthFormTest extends BaseClass{
         driver.findElementById("android:id/button1").click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/btnAuth").getText(),"Вход");
 
-        //Переход в раздел Вход через E-MAIL, валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
+        //2 Переход в раздел Вход через E-MAIL, валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
 
         driver.findElementById("biz.growapp.winline:id/btnAuth").click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(),"9745314");
@@ -52,7 +52,7 @@ public class AuthFormTest extends BaseClass{
         driver.findElementById("android:id/button1").click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/btnAuth").getText(),"Вход");
 
-        //Переход в раздел Вход через ТЕЛЕФОН, валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
+        //3 Переход в раздел Вход через ТЕЛЕФОН, валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
         driver.findElementById("biz.growapp.winline:id/btnAuth").click();
         driver.findElementById("biz.growapp.winline:id/tvAuthType1").click();
         driver.findElementById("biz.growapp.winline:id/etPhoneMask").click();
