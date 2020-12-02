@@ -1,10 +1,12 @@
-package tests;
+package tests.authtests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import tests.BaseClass;
+
 import static tests.pages.MainPage.closePopupIfDisplayed;
 
-public class AuthFormTest extends BaseClass{
+public class AuthFormTest extends BaseClass {
     @Test
     public void authFormTest() {
         //Переход в Профиль

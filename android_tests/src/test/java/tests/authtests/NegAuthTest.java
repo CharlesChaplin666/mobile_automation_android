@@ -1,7 +1,8 @@
-package tests;
+package tests.authtests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import tests.BaseClass;
 
 public class NegAuthTest extends BaseClass {
     @Test

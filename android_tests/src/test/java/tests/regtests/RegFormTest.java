@@ -1,7 +1,8 @@
-package tests;
+package tests.regtests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import tests.BaseClass;
 
 public class RegFormTest extends BaseClass {
     @Test
