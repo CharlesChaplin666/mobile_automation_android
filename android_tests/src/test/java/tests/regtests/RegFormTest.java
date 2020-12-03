@@ -13,14 +13,16 @@ public class RegFormTest extends BaseClass {
                 "Регистрация");
 
         //Ввод номера телефона
-        driver.findElementById("biz.growapp.winline:id/etPhone").click();
-        driver.findElementById("biz.growapp.winline:id/etPhone").setValue("1234567890");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPhone","1234567890");
+       /* driver.findElementById("biz.growapp.winline:id/etPhone").click();
+        driver.findElementById("biz.growapp.winline:id/etPhone").setValue("1234567890"); */
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPhone").getText(),
                 "+7 (123) 456 78 90");
 
         //Ввод пароля
-        driver.findElementById("biz.growapp.winline:id/etPassword").click();
-        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPassword", "123456");
+        /* driver.findElementById("biz.growapp.winline:id/etPassword").click();
+        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456"); */
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPassword").getText(),
                 "123456");
 
@@ -30,8 +32,9 @@ public class RegFormTest extends BaseClass {
         driver.findElementById("android:id/button1").click();
 
         //Ввод Промокода
-        driver.findElementById("biz.growapp.winline:id/tvHavePromoCode").click();
-        driver.findElementById("biz.growapp.winline:id/etPromoCode").setValue("123456");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/tvHavePromoCode", "123456");
+        /*driver.findElementById("biz.growapp.winline:id/tvHavePromoCode").click();
+        driver.findElementById("biz.growapp.winline:id/etPromoCode").setValue("123456");*/
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPromoCode").getText(), "123456");
 
         //Активация чек-бокса и проверка активации кнопки "Продолжить"

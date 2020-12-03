@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
@@ -39,5 +40,38 @@ public class BaseClass {
         public static void teardown() {
             driver.quit();
         }
+    public WebElement findElementByIdClickAndSendKeys(String id, String value){
+        WebElement element = driver.findElementById(id);
+        element.click();
+        element.sendKeys(value);
+        return element;
+    }
+    public WebElement findElementsByIdClickAndSendKeys(String id, int get_number, String value){
+        WebElement element = driver.findElementsById(id).get(get_number);
+        element.click();
+        element.sendKeys(value);
+        return element;
+    }
+    /*public WebElement waitForElementPresentById(String Id, String error_message, long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+        By by = By.xpath(Id);
+        return wait.until(
+                ExpectedConditions.presenceOfElementLocated(by)
+        );
+    }
+    public WebElement waitForElementPresentById(String Id, String error_message){
+        return waitForElementPresentById(Id, error_message, 5);
 
     }
+    public WebElement waitForElementByIdAndClick(String Id, String error_message, long timeoutInSeconds){
+        WebElement element = waitForElementPresentById(Id, error_message, timeoutInSeconds);
+        element.click();
+        return element;
+    }
+    public WebElement waitForElementByIdAndSendKeys(String Id, String value, String error_message, long timeoutInSeconds){
+        WebElement element = waitForElementPresentById(Id, error_message, timeoutInSeconds);
+        element.sendKeys(value);
+        return element;
+    }*/
+        }

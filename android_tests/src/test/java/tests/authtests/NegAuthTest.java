@@ -22,11 +22,13 @@ public class NegAuthTest extends BaseClass {
         driver.findElementById("biz.growapp.winline:id/btnCancel").click();
 
         //2 Авторизация с несуществующим ЛОГИНом
-        driver.findElementById("biz.growapp.winline:id/etLogin").click();
-        driver.findElementById("biz.growapp.winline:id/etLogin").setValue("razraz");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etLogin", "razraz");
+        /*driver.findElementById("biz.growapp.winline:id/etLogin").click();
+        driver.findElementById("biz.growapp.winline:id/etLogin").setValue("razraz");*/
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(), "razraz");
-        driver.findElementById("biz.growapp.winline:id/etPassword").click();
-        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPassword", "123456");
+        /*driver.findElementById("biz.growapp.winline:id/etPassword").click();
+        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456");*/
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPassword").getText(), "123456");
         driver.findElementById("biz.growapp.winline:id/btnLogIn").click();
         Assertions.assertEquals(driver.findElementById("android:id/alertTitle").getText(), "Не удалось войти");
@@ -35,11 +37,13 @@ public class NegAuthTest extends BaseClass {
         driver.findElementById("biz.growapp.winline:id/ivClearLogin").click();
 
         //3 Авторизация с неккоректным паролем
-        driver.findElementById("biz.growapp.winline:id/etLogin").click();
-        driver.findElementById("biz.growapp.winline:id/etLogin").setValue("9745314");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etLogin", "9745314");
+        /*driver.findElementById("biz.growapp.winline:id/etLogin").click();
+        driver.findElementById("biz.growapp.winline:id/etLogin").setValue("9745314");*/
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(), "9745314");
-        driver.findElementById("biz.growapp.winline:id/etPassword").click();
-        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("1234567");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPassword", "1234567");
+        /*driver.findElementById("biz.growapp.winline:id/etPassword").click();
+        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("1234567");*/
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPassword").getText(), "1234567");
         driver.findElementById("biz.growapp.winline:id/btnLogIn").click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/tvTitle").getText(), "Не удалось войти");

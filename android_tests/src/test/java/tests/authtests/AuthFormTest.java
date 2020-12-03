@@ -7,6 +7,7 @@ import tests.BaseClass;
 import static tests.pages.MainPage.closePopupIfDisplayed;
 
 public class AuthFormTest extends BaseClass {
+
     @Test
     public void authFormTest() {
         //Переход в Профиль
@@ -18,11 +19,13 @@ public class AuthFormTest extends BaseClass {
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(),"Логин");
 
         //1 Валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
-        driver.findElementById("biz.growapp.winline:id/etLogin").click();
-        driver.findElementById("biz.growapp.winline:id/etLogin").setValue("9745314");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etLogin", "9745314");
+        /*driver.findElementById("biz.growapp.winline:id/etLogin").click();
+        driver.findElementById("biz.growapp.winline:id/etLogin").setValue("9745314"); */
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(), "9745314");
-        driver.findElementById("biz.growapp.winline:id/etPassword").click();
-        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456");
+        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPassword", "123456");
+       /* driver.findElementById("biz.growapp.winline:id/etPassword").click();
+        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456"); */
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPassword").getText(), "123456");
         driver.findElementById("biz.growapp.winline:id/btnLogIn").click();
         //Появляется поп-ап Фрибет
