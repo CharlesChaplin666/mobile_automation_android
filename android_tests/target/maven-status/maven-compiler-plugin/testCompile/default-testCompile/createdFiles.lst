@@ -1,0 +1,5 @@
+tests/pages/MainPage.class
+tests/BaseClass.class
+tests/authtests/NegAuthTest.class
+tests/regtests/RegFormTest.class
+tests/authtests/AuthFormTest.class
