@@ -7,6 +7,9 @@ import tests.BaseClass;
 public class RegFormTest extends BaseClass {
     @Test
     public void regFormTest(){
+        if (driver.findElementById("biz.growapp.winline:id/rvItems").isDisplayed()) { //bannerId
+                driver.findElementById("biz.growapp.winline:id/btnRegister").click(); //register button id
+        }
         //Переход на страницу Регистрации
         driver.findElementById("biz.growapp.winline:id/btnRegister").click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/tvToolbarTitle").getText(),
@@ -32,9 +35,9 @@ public class RegFormTest extends BaseClass {
         driver.findElementById("android:id/button1").click();
 
         //Ввод Промокода
-        findElementByIdClickAndSendKeys("biz.growapp.winline:id/tvHavePromoCode", "123456");
-        /*driver.findElementById("biz.growapp.winline:id/tvHavePromoCode").click();
-        driver.findElementById("biz.growapp.winline:id/etPromoCode").setValue("123456");*/
+        //findElementByIdClickAndSendKeys("biz.growapp.winline:id/tvHavePromoCode", "123456"); ??? Почему-то не срабатывает
+        driver.findElementById("biz.growapp.winline:id/tvHavePromoCode").click();
+        driver.findElementById("biz.growapp.winline:id/etPromoCode").setValue("123456");
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPromoCode").getText(), "123456");
 
         //Активация чек-бокса и проверка активации кнопки "Продолжить"

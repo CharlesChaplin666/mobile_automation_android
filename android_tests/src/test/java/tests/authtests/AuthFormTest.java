@@ -10,6 +10,9 @@ public class AuthFormTest extends BaseClass {
 
     @Test
     public void authFormTest() {
+        if (driver.findElementById("biz.growapp.winline:id/rvItems").isDisplayed()) { //bannerId
+                driver.findElementById("biz.growapp.winline:id/btnRegister").click(); //register button id
+        }
         //Переход в Профиль
         driver.findElementsById("biz.growapp.winline:id/fixed_bottom_navigation_icon").get(4).click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/btnAuth").getText(),"Вход");
