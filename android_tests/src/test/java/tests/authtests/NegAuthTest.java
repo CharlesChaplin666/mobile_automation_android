@@ -7,9 +7,16 @@ import tests.BaseClass;
 public class NegAuthTest extends BaseClass {
     @Test
     public void negAuthTest() {
+        //скрываем поп-ап
         if (driver.findElementById("biz.growapp.winline:id/rvItems").isDisplayed()) { //bannerId
-            driver.findElementById("biz.growapp.winline:id/btnRegister").click(); //register button id
+            driver.findElementById("biz.growapp.winline:id/registrationBanner").click(); //register button id
         }
+        //В связи с тем, что теперь стартовой страницей является страница Реги и нет нижней панели разделов, добавлены следующие шаги
+        //Открываем выпадающее меню
+        driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]").click();
+        //Переход на Главную
+        driver.findElementById("biz.growapp.winline:id/ivImage").click();
+
         //Переход в Профиль
         driver.findElementsById("biz.growapp.winline:id/fixed_bottom_navigation_icon").get(4).click();
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/btnAuth").getText(),"Вход");
