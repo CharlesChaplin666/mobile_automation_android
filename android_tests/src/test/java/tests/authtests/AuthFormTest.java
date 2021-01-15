@@ -14,7 +14,10 @@ public class AuthFormTest extends BaseClass {
         if (driver.findElementById("biz.growapp.winline:id/rvItems").isDisplayed()) { //bannerId
             driver.findElementById("biz.growapp.winline:id/registrationBanner").click(); // id свободного поля на странице регистрации
         }
-        //В связи с тем, что теперь стартовой страницей является страница Реги и нет нижней панели разделов, добавлены следующие шаги
+
+        /*В связи с тем, что теперь стартовой страницей является страница Реги, на которой внизу есть кнопка "Вход",
+        то добавлены шаги открытия выпадающего меню и переход на главную
+          */
         //Открываем выпадающее меню
         driver.findElementByXPath("//android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]").click();
         //Переход на Главную
@@ -22,10 +25,12 @@ public class AuthFormTest extends BaseClass {
 
         //Переход в Профиль
         driver.findElementsById("biz.growapp.winline:id/fixed_bottom_navigation_icon").get(4).click();
+
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/btnAuth").getText(),"Вход");
 
         //Переход в раздел ВХОД
         driver.findElementById("biz.growapp.winline:id/btnAuth").click();
+
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(),"Логин");
 
         //1 Валидация полей ЛОГИН и ПАРОЛЬ, авторизация и выход из акка
@@ -33,9 +38,11 @@ public class AuthFormTest extends BaseClass {
         /*driver.findElementById("biz.growapp.winline:id/etLogin").click();
         driver.findElementById("biz.growapp.winline:id/etLogin").setValue("9745314"); */
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etLogin").getText(), "9745314");
-        findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPassword", "123456");
-       /* driver.findElementById("biz.growapp.winline:id/etPassword").click();
-        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456"); */
+        //findElementByIdClickAndSendKeys("biz.growapp.winline:id/etPassword", "123456");
+        driver.findElementById("biz.growapp.winline:id/etPassword").click();
+        //driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout[3]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText").setValue("123456");
+        driver.findElementById("biz.growapp.winline:id/etPassword").setValue("123456");
+        //ПОЧЕМУ-ТО ПЕРЕСТАЛ НАХОДИТЬ, ХОТЯ id ЭЛЕМЕНТА ВЕРНОЕ
         Assertions.assertEquals(driver.findElementById("biz.growapp.winline:id/etPassword").getText(), "123456");
         driver.findElementById("biz.growapp.winline:id/btnLogIn").click();
         //Появляется поп-ап Фрибет

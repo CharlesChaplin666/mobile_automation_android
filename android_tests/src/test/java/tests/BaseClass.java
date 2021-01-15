@@ -18,7 +18,8 @@ public class BaseClass {
     public static void setup() {
         try {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            // для реального девайса
+            // для Xiaomi
+
             capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
             capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1.0");
             capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Xiaomi Redmi 5");
@@ -27,6 +28,18 @@ public class BaseClass {
             capabilities.setCapability("appActivity", "biz.growapp.winline.presentation.splash.SplashActivity");
             capabilities.setCapability("appWaitActivity", "biz.growapp.winline.presentation.splash.SplashActivity");
             capabilities.setCapability(MobileCapabilityType.UDID, "4e25e0ee7cf5");
+
+            // для VsmartBeeWinlineApp
+            /*
+            capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
+            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1");
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Vsmart Bee WinlineApp");
+            capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 30);
+            capabilities.setCapability("appPackage", "biz.growapp.winline");
+            capabilities.setCapability("appActivity", "biz.growapp.winline.presentation.splash.SplashActivity");
+            capabilities.setCapability("appWaitActivity", "biz.growapp.winline.presentation.splash.SplashActivity");
+            capabilities.setCapability(MobileCapabilityType.UDID, "AEE00033866");
+            */
             URL url = new URL("http://127.0.0.1:4723/wd/hub");
             driver = new AndroidDriver<MobileElement>(url, capabilities);
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
